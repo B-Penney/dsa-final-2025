@@ -6,7 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Lob;
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.*;
 
 @Entity
 public class BinarySearchTreeResult {
@@ -19,8 +18,6 @@ public class BinarySearchTreeResult {
 
     @Lob
     private String treeJson;
-
-    // Getters and setters
 
     public Long getId() {
         return id;
