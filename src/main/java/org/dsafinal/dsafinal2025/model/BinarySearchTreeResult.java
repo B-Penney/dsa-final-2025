@@ -3,10 +3,11 @@ package org.dsafinal.dsafinal2025.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
-import org.springframework.data.annotation.Id;
+import lombok.Getter;
 
-
+@Getter
 @Entity
 public class BinarySearchTreeResult {
 
@@ -19,20 +20,8 @@ public class BinarySearchTreeResult {
     @Lob
     private String treeJson;
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getInputNumbers() {
-        return inputNumbers;
-    }
-
     public void setInputNumbers(String inputNumbers) {
         this.inputNumbers = inputNumbers;
-    }
-
-    public String getTreeJson() {
-        return treeJson;
     }
 
     public void setTreeJson(String treeJson) {
