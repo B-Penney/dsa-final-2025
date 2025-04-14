@@ -11,7 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -26,7 +27,7 @@ public class TreeController {
 
     @GetMapping("/enter-numbers")
     public String enterNumbers() {
-        return "enterNumbers";
+        return "redirect:/dashboard";
     }
 
     @PostMapping("/process-numbers")
@@ -52,10 +53,11 @@ public class TreeController {
         }
     }
 
-    @GetMapping("/previous-trees")
-    public String previousTrees(Model model) {
+    @GetMapping("/dashboard")
+    public String dashboard(Model model) {
         List<BinarySearchTreeResult> results = treeRepo.findAll();
         model.addAttribute("results", results);
-        return "previousTrees";
+        return "dashboard";
     }
 }
+
